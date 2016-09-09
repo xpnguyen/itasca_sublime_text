@@ -74,6 +74,15 @@ patterns:
   captures:
     '1': {name: entity.name.function.f3dat}
 
+- match: (xpnguyen)\(
+  name: entity.name.function.f3dat
+
+
+
+
+
+
+
 
 
 
