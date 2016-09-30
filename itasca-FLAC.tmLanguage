@@ -33,13 +33,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(call|clean|cyc|cycle|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b</string>
+			<string>^\s*\b(call|clean|cyc|cycle|expgrid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b</string>
 			<key>name</key>
 			<string>constant.language.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(apply|attach|delete|fix|free|geometry|group|hist|history|ini|initial|int|interface|list|local|model|null|plot|prop|step|system|water)\b\s+</string>
+			<string>^\s*\b(apply|attach|delete|error|fix|free|geometry|group|hist|history|ini|initial|int|interface|list|local|model|null|plot|prop|step|system|water)\b\s+</string>
 			<key>name</key>
 			<string>constant.language.f3dat</string>
 		</dict>
@@ -57,7 +57,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(add|brick|britt|brittle|bulk|coh|cylinder|dd|delete|dens|densify|dila|dip|disp|elastic|end1|end2|face|fric|gp|gradient|group|id|internal|key|kn|ks|large|mohr|normal|null|orientation|origin|poiss|prop|ratio|shear|size|slot|smalldisp|sxx|syy|szz|tens|tol|vel|x|y|young|z)\b</string>
+			<string>\b(add|brick|britt|brittle|bulk|coh|cylinder|dd|delete|dens|densify|dila|dip|disp|elastic|end1|end2|face|fish|fric|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|mohr|name|normal|nstep|null|orientation|origin|poiss|prop|ratio|shear|size|slot|smalldisp|sxx|syy|szz|tens|tol|unbal|vel|x|y|young|z)\b</string>
 			<key>name</key>
 			<string>variable.parameter.type.f3dat</string>
 		</dict>
@@ -81,13 +81,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log)\b</string>
+			<string>\b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log|unit)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
+			<string>\b\s*(float|mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>
@@ -105,7 +105,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>((\'|\")[a-zA-Z,0-9,_,\s,\.,\,,/,\-]*(\'|\"))</string>
+			<string>((\'|\")[a-zA-Z,0-9,_,\s,\.,\,,/,\-,\*]*(\'|\"))</string>
 			<key>name</key>
 			<string>string.language.f3dat</string>
 		</dict>
@@ -194,7 +194,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(gp_disp|gp_extra|gp_group|gp_linkindex|gp_linkzone|gp_next|gp_pos|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(</string>
+			<string>(gp_disp|gp_extra|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -231,6 +231,12 @@
 			</dict>
 			<key>match</key>
 			<string>(ie_zhost|ie_vert|ie_norm|ie_area|in_area|in_disp|in_ftarget|in_nstr|in_pos|in_ztarget)\(</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(xpnguyen)\(</string>
+			<key>name</key>
+			<string>entity.name.function.f3dat</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

@@ -16,15 +16,15 @@ patterns:
   name: constant.numeric.float.f3dat
 - match: \b([1-9]+[0-9]*|0)
   name: constant.numeric.integer.decimal.f3dat
-- match: ^\s*\b(call|clean|cyc|cycle|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b
+- match: ^\s*\b(call|clean|cyc|cycle|expgrid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b
   name: constant.language.f3dat
-- match: ^\s*\b(apply|attach|delete|fix|free|geometry|group|hist|history|ini|initial|int|interface|list|local|model|null|plot|prop|step|system|water)\b\s+
+- match: ^\s*\b(apply|attach|delete|error|fix|free|geometry|group|hist|history|ini|initial|int|interface|list|local|model|null|plot|prop|step|system|water)\b\s+
   name: constant.language.f3dat
 - match: ^\s*\b(gen|generate)\b\s*\b(zone)?\b\s*\b(copy|merge|reflect|separate)?\b
   name: constant.language.f3dats
 - match: \b(range)\b\s+
   name: constant.language.f3dat
-- match: \b(add|brick|britt|brittle|bulk|coh|cylinder|dd|delete|dens|densify|dila|dip|disp|elastic|end1|end2|face|fric|gp|gradient|group|id|internal|key|kn|ks|large|mohr|normal|null|orientation|origin|poiss|prop|ratio|shear|size|slot|smalldisp|sxx|syy|szz|tens|tol|vel|x|y|young|z)\b
+- match: \b(add|brick|britt|brittle|bulk|coh|cylinder|dd|delete|dens|densify|dila|dip|disp|elastic|end1|end2|face|fish|fric|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|mohr|name|normal|nstep|null|orientation|origin|poiss|prop|ratio|shear|size|slot|smalldisp|sxx|syy|szz|tens|tol|unbal|vel|x|y|young|z)\b
   name: variable.parameter.type.f3dat
 - match: \b(case_of|case|end_case|command|end_command|end|if|else|else if|end_if|loop|while|foreach|end_loop)\b
   name: keyword.language.f3dat
@@ -32,15 +32,15 @@ patterns:
   name: keyword.language.f3dat
 - match: \s*(=|\*|\+|\^|\-|\/|\#|\,)\s*
   name: keyword.operator.f3dat
-- match: \b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log)\b
+- match: \b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log|unit)\b
   name: storage.type.function.f3dat
-- match: \b\s*(mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b
+- match: \b\s*(float|mag|max|min|not|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b
   name: storage.type.function.f3dat
 - match: ((;)(?!\{).*$\n?)
   name: comment.language.f3dat
 - match: \s*(<|=<|>|>=|#)\s*
   name: keyword.operator.comparison.f3dat
-- match: ((\'|\")[a-zA-Z,0-9,_,\s,\.,\,,/,\-]*(\'|\"))
+- match: ((\'|\")[a-zA-Z,0-9,_,\s,\.,\,,/,\-,\*]*(\'|\"))
   name: string.language.f3dat
 - match: (\[|\])
   name: storage.type.function.f3dat
@@ -61,7 +61,7 @@ patterns:
 - match: (array_dim|array_size|buildstr|get_array|out|strlen|string|substr|table_size|xtable|ytable)\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: (gp_disp|gp_extra|gp_group|gp_linkindex|gp_linkzone|gp_next|gp_pos|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(
+- match: (gp_disp|gp_extra|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - match: (z_cen|z_density|z_extra|z_facegp|z_facegroup|z_facenorm|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(
