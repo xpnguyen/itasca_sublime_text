@@ -57,13 +57,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(add|brick|britt|brittle|bulk|coh|cylinder|dd|delete|dens|densify|dila|dip|disp|elastic|end1|end2|face|fish|fric|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|mohr|name|normal|nstep|orientation|origin|poiss|prop|ratio|shear|size|slot|smalldisp|sxx|syy|szz|tens|tol|unbal|vel|x|y|young|z)\b</string>
+			<string>\b(add|brick|britt|brittle|bulk|coh|cylinder|cyl|dd|delete|dens|densify|dila|dip|disp|dvel|elastic|end1|end2|extra|face|fish|fishcall|fric|geom_rep|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|maxedge|mohr|name|normal|nstep|nstress|nvel|plane|orientation|origin|poiss|prop|ratio|remove|shear|size|slot|smalldisp|strainsoftening|sxx|syy|szz|tens|tol|ttab|unbal|vel|x|y|young|z|zone)\b</string>
 			<key>name</key>
 			<string>variable.parameter.type.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(case_of|case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|end_loop)\b</string>
+			<string>\b(case_of|caseof|case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|end_loop|section|end_section)\b</string>
 			<key>name</key>
 			<string>keyword.language.f3dat</string>
 		</dict>
@@ -87,7 +87,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(error|float|mag|max|min|not|null|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
+			<string>\b\s*(error|float|int|mag|max|min|not|null|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>
@@ -206,7 +206,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(z_cen|z_density|z_extra|z_facegp|z_facegroup|z_facenorm|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(</string>
+			<string>(z_cen|z_density|z_extra|z_facegp|z_faceremovegroup|z_facegroup|z_facenorm|z_find|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -243,12 +243,6 @@
 			</dict>
 			<key>match</key>
 			<string>(uds_create|uds_value)\(</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(xpnguyen)\(</string>
-			<key>name</key>
-			<string>entity.name.function.f3dat</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

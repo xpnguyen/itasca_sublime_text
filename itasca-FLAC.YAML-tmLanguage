@@ -24,9 +24,9 @@ patterns:
   name: constant.language.f3dats
 - match: \b(range)\b\s+
   name: constant.language.f3dat
-- match: \b(add|brick|britt|brittle|bulk|coh|cylinder|dd|delete|dens|densify|dila|dip|disp|elastic|end1|end2|face|fish|fric|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|mohr|name|normal|nstep|orientation|origin|poiss|prop|ratio|shear|size|slot|smalldisp|sxx|syy|szz|tens|tol|unbal|vel|x|y|young|z)\b
+- match: \b(add|brick|britt|brittle|bulk|coh|cylinder|cyl|dd|delete|dens|densify|dila|dip|disp|dvel|elastic|end1|end2|extra|face|fish|fishcall|fric|geom_rep|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|maxedge|mohr|name|normal|nstep|nstress|nvel|plane|orientation|origin|poiss|prop|ratio|remove|shear|size|slot|smalldisp|strainsoftening|sxx|syy|szz|tens|tol|ttab|unbal|vel|x|y|young|z|zone)\b
   name: variable.parameter.type.f3dat
-- match: \b(case_of|case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|end_loop)\b
+- match: \b(case_of|caseof|case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|end_loop|section|end_section)\b
   name: keyword.language.f3dat
 - match: \s*&\s*$\n?
   name: keyword.language.f3dat
@@ -34,7 +34,7 @@ patterns:
   name: keyword.operator.f3dat
 - match: \b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log|unit)\b
   name: storage.type.function.f3dat
-- match: \b\s*(error|float|mag|max|min|not|null|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b
+- match: \b\s*(error|float|int|mag|max|min|not|null|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b
   name: storage.type.function.f3dat
 - match: ((;)(?!\{).*$\n?)
   name: comment.language.f3dat
@@ -64,7 +64,7 @@ patterns:
 - match: (gp_disp|gp_extra|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: (z_cen|z_density|z_extra|z_facegp|z_facegroup|z_facenorm|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(
+- match: (z_cen|z_density|z_extra|z_facegp|z_faceremovegroup|z_facegroup|z_facenorm|z_find|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - match: (z_fsi|z_gp|z_near|z_sig1|z_sig2|z_sig3|z_state|z_sxx|z_sxy|z_sxz|z_syy|z_syz|z_szz)\(
@@ -76,11 +76,6 @@ patterns:
 - match: (uds_create|uds_value)\(
   captures:
     '1': {name: entity.name.function.f3dat}
-
-- match: (xpnguyen)\(
-  name: entity.name.function.f3dat
-
-
 
 
 
