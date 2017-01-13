@@ -57,13 +57,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(add|brick|britt|brittle|bulk|coh|cylinder|cyl|dd|delete|dens|densify|dila|dip|disp|dvel|elastic|end1|end2|extra|face|fish|fishcall|fric|geom_rep|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|maxedge|mohr|name|normal|nstep|nstress|nvel|plane|orientation|origin|poiss|prop|ratio|remove|shear|size|slot|smalldisp|strainsoftening|sxx|syy|szz|tens|tol|ttab|unbal|vel|x|y|young|z|zone)\b</string>
+			<string>\b(add|bitmap|brick|britt|brittle|bulk|center|coh|cylinder|cyl|dd|delete|dens|densify|dila|dip|disp|dvel|elastic|end1|end2|export|extra|face|fish|fishcall|fric|geom_rep|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|maxedge|model|mohr|name|normal|nstep|nstress|nvel|plane|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|state|strainsoftening|sxx|syy|szz|tens|tol|ttab|unbal|vel|x|y|young|z|zone)\b</string>
 			<key>name</key>
 			<string>variable.parameter.type.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(case_of|caseof|case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|end_loop|section|end_section)\b</string>
+			<string>\b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|end_loop|section|end_section)\b</string>
 			<key>name</key>
 			<string>keyword.language.f3dat</string>
 		</dict>
@@ -87,7 +87,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(error|float|int|mag|max|min|not|null|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
+			<string>\b\s*(dot|error|float|int|mag|max|min|not|null|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>
@@ -105,7 +105,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>((\'|\")[a-zA-Z,0-9,_,\s,\.,\,,/,\-,\*]*(\'|\"))</string>
+			<string>((\'|\")[a-zA-Z,0-9,_,\s,\.,\,,/,\-,\*,:,=,!]*(\'|\"))</string>
 			<key>name</key>
 			<string>string.language.f3dat</string>
 		</dict>
@@ -155,8 +155,20 @@
 			<string>(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.f3dat</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>\b(array|at_list|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list)\b\s*</string>
+			<string>(array|array_dim|array_size|buildstr|del_table|get_array|get_mem|lose_mem|mem|open|out|parse|read|strlen|string|substr|write|table|table_size|xtable|ytable)\(</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(at_list|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list)\b\s*</string>
 			<key>name</key>
 			<string>entity.name.function.f3dat</string>
 		</dict>
@@ -182,19 +194,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(array_dim|array_size|buildstr|get_array|out|strlen|string|substr|table_size|xtable|ytable)\(</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.f3dat</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(gp_disp|gp_extra|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(</string>
+			<string>(gp_disp|gp_extra|gp_funbal|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_removegroup|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -242,7 +242,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(uds_create|uds_value)\(</string>
+			<string>(uds_create|uds_group|uds_near|uds_pos|uds_value)\(</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
