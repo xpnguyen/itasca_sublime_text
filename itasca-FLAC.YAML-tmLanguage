@@ -70,7 +70,7 @@ patterns:
 - match: (z_fsi|z_gp|z_near|z_sig1|z_sig2|z_sig3|z_state|z_sxx|z_sxy|z_sxz|z_syy|z_syz|z_szz)\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: (ie_zhost|ie_vert|ie_norm|ie_area|in_area|in_disp|in_ftarget|in_id|in_next|in_nstr|in_pos|in_ztarget)\(
+- match: (ie_zhost|ie_vert|ie_norm|ie_area|in_area|in_disp|in_extra|in_ftarget|in_id|in_next|in_nstr|in_pos|in_ztarget)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - match: (uds_create|uds_group|uds_near|uds_pos|uds_value)\(
