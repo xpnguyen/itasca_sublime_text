@@ -230,7 +230,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(ie_zhost|ie_vert|ie_norm|ie_area|in_area|in_disp|in_ftarget|in_id|in_next|in_nstr|in_pos|in_ztarget)\(</string>
+			<string>(ie_zhost|ie_vert|ie_norm|ie_area|in_area|in_disp|in_extra|in_ftarget|in_id|in_next|in_nstr|in_pos|in_ztarget)\(</string>
 		</dict>
 		<dict>
 			<key>captures</key>
