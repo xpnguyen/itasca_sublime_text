@@ -7,6 +7,7 @@ fileTypes:
 - dat
 - f3fis
 - fis
+- fin
 uuid: a4358a63-d396-4e0c-9b3d-f0de59021e43
 
 patterns:
@@ -16,17 +17,19 @@ patterns:
   name: constant.numeric.float.f3dat
 - match: \b([1-9]+[0-9]*|0)
   name: constant.numeric.integer.decimal.f3dat
-- match: ^\s*\b(call|clean|cyc|cycle|expgrid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b
+- match: ^\s*\b(call|clean|config|cyc|cycle|expgrid|grid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b
   name: constant.language.f3dat
-- match: ^\s*\b(apply|attach|delete|error|fix|free|geometry|group|hist|history|ini|initial|int|interface|list|local|model|plot|prop|step|system|water)\b\s+
+- match: ^\s*\b(apply|attach|delete|error|fix|free|geometry|group|his|hist|history|ini|initial|int|interface|list|local|model|plot|print|prop|step|system|water)\b
   name: constant.language.f3dat
 - match: ^\s*\b(gen|generate)\b\s*\b(zone)?\b\s*\b(copy|merge|reflect|separate)?\b
   name: constant.language.f3dats
+- match: ^\s*\b(struct|structure)\b\s*\b(liner|beam|node)?\b
+  name: constant.language.f3dats
 - match: \b(range)\b\s+
   name: constant.language.f3dat
-- match: \b(add|bitmap|brick|britt|brittle|bulk|center|coh|cylinder|cyl|dd|delete|dens|densify|dila|dip|disp|dvel|elastic|end1|end2|export|extra|face|fish|fishcall|fric|geom_rep|gpextra|gp|gradient|group|hist_rep|id|internal|key|kn|ks|large|maxedge|model|mohr|name|normal|nstep|nstress|nvel|plane|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|state|strainsoftening|sxx|syy|szz|tens|tol|ttab|unbal|vel|x|y|young|z|zone)\b
+- match: \s\b(add|aside|ats|begin|bitmap|brick|britt|brittle|bside|bulk|cam-clay|center|coh|cohesion|cylinder|cyl|dd|delete|dens|density|densify|dila|dip|disp|dvel|dynamic|dyt|dytime|echo|elastic|end|export|extra|face|fish|fishcall|flow|fric|from|geom_rep|glued|gpextra|gp|gradient|group|gwflow|hist_rep|id|internal|kappa|key|kn|ks|lambda|large|maxedge|model|mohr|name|node|normal|nstep|nstress|nvel|plane|poro|pp|pressure|off|on|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|sratio|state|strainsoftening|sxx|syy|szz|tens|to|tol|ttab|unbal|unglued|var|vel|x|xdisp|xquiet|xvel|y|ydisp|yquiet|yvel|young|z|zone)\b\s
   name: variable.parameter.type.f3dat
-- match: \b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|end_loop|section|end_section)\b
+- match: \b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|endloop|end_loop|section|endsection|end_section|while_stepping)\b
   name: keyword.language.f3dat
 - match: \s*&\s*$\n?
   name: keyword.language.f3dat
@@ -48,32 +51,41 @@ patterns:
   captures:
     '1': {name: storage.type.function.f3dat}
     '2': {name: variable.parameter.function.f3dat}
-- match: (define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?
+- match: ^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?
   captures:
     '1': {name: keyword.language.f3dat}
     '2': {name: storage.type.function.f3dat}
     '3': {name: variable.parameter.function.f3dat}
-- match: (array|array_dim|array_size|buildstr|del_table|get_array|get_mem|lose_mem|mem|open|out|parse|read|strlen|string|substr|write|table|table_size|xtable|ytable)\(
+- match: \b(array_dim|array_size|buildstr|del_table|get_array|get_mem|lose_array|lose_mem|mem|fmem|imem|open|out|parse|read|strlen|string|substr|write|table|table_size|x|xtable|y|ytable)\b\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: \b(at_list|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list)\b\s*
+- match: \b(array|at_list|b_zone|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list|block_head)\b\s*
   name: entity.name.function.f3dat
 - match: (at_master|at_qweight|at_slave|at_type|at_weight)\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: (gp_disp|gp_extra|gp_funbal|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_removegroup|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(
+- match: (flags|gp_disp|gp_extra|gp_funbal|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_removegroup|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: (z_cen|z_density|z_extra|z_facegp|z_faceremovegroup|z_facegroup|z_facenorm|z_find|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(
+- match: (xd|xdisp|xv|xvel|yd|ydisp|yv|yvel|)\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: (z_fsi|z_gp|z_near|z_sig1|z_sig2|z_sig3|z_state|z_sxx|z_sxy|z_sxz|z_syy|z_syz|z_szz)\(
+- match: (xen|ycen|z_apply|z_cen|z_density|z_extra|z_faceextra|z_facegp|z_faceremovegroup|z_facegroup|z_facenorm|z_find|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (sxx|syy|szz|z_fsi|z_gp|z_near|z_sig1|z_sig2|z_sig3|z_state|z_sxx|z_sxy|z_sxz|z_syy|z_syz|z_szz)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - match: (ie_zhost|ie_vert|ie_norm|ie_area|in_area|in_disp|in_extra|in_ftarget|in_id|in_next|in_nstr|in_pos|in_ztarget)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - match: (uds_create|uds_group|uds_near|uds_pos|uds_value)\(
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: \b(str_fin|str_pnt|nvstr|nvels|nvnod|nvtyp|nvsupp|ksnode|ksels|ksnseq|kseseq|kstyp|kssupp|kssext|kelext|kelid|keln1|keln2|kelcod|keltyp|keltad|kell|kelfsh|kelfax|kelm1|kelm2|kelut1|kelut2|kelhin|kelhm1|kelhm2|keleax|keluti|kelcod2|kelpax|kelpbe1|kelpbe2|kelsta1|kelsta2|kelpret|kelsp2|kelsp3|kelsp4|kelsp5|kndext|kndid|kndx|kndy|kndud1|kndud2|kndu1|kndu2|kndthd|kndth|kndmx|kndmy|kndmr|kndi|kndj|kndadd|kndf1|kndf2|kndfr|kndf1c|kndf2c|kndfrc|kndcod|kndpin|kndap1|kndap2|kndapr|kndxfx|kndyfx|kndrfx|kndefl|kndt1|kndt2|kndbfl|kndw1|kndw2|kndw3|kndw4|kndfs|kndtad|kndmxd|kndmyd|kndmrd|kndmsf|kndma1|kndma2|kndnfl|kndfn|kndup|kndum|kndua|kndunr|kndhfr|kndhtd|kndhth|kndhin|kndhmi|kndhtr|kndep|kndnc|kndnc1|kndlo1|kndlo2|kndfor1|kndfor2|kndus|kndcstr|kndcarea|kndsfce|knddt|kndtadd|kndcod2|kndsxxi|kndsxyi|kndsyyi|kndszzi|kndppi|kndsi|kndcfac|kndaxf1|kndaxf2|kndrsd|kndxo|kndyo|kndacc1|kndacc2|kndaccth|kndsp7|kndsp8|kndsp9|ktypex|ktype|ktypi|ktypar|ktypid|ktypei|ktypkb|ktypsb|ktypyi|ktyppm|ktyden|ktypkn|ktypks|ktypfb|ktypyc|ktypsn|ktyppe|ktypfn|ktypcg|ktyppy|ktypte|ktyphe|ktypwi|ktypra|ktypal|ktypszz|ktypsbtb|ktypfbtb|ktypcftb|ktyptfs|ktypprat|ktypshape|ktypsyi|ktypsyir|ktypsyc|ktypthick|ktypstcw|ktypstns|ktypstwi|ktypstth|ktypstyi|ktypstyc|ktypstkb|ktypstsb|ktypstf0|ktypstf1|ktypsts0|ktypsp1|ktypsp2|ktypsp3|ktypsp4|ktypsp5|ktypsp6|ktypsp7|ktypsp8|ksuext|ksut1|ksut2|ksupro|ksupad|ksufn|ksufs|ksuun|ksuus|ksutad|ksubad|ksutra|ksubra|ksutij|ksubij|ksusub|ksunsm)\b
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: \b(b_next|z_y|)\b
   captures:
     '1': {name: entity.name.function.f3dat}
 
