@@ -5,7 +5,6 @@
 	<key>fileTypes</key>
 	<array>
 		<string>f3dat</string>
-		<string>dat</string>
 		<string>f3fis</string>
 		<string>fis</string>
 		<string>fin</string>
@@ -40,13 +39,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(apply|attach|delete|error|fix|free|geometry|group|his|hist|history|ini|initial|int|interface|list|local|model|plot|print|prop|step|system|water)\b</string>
+			<string>^\s*\b(apply|attach|block|boun|boundary|crack|delete|error|fix|free|geometry|group|his|hist|history|ini|initial|int|interface|jdelete|joint|list|local|model|plot|print|prop|step|system|water|zone)\b</string>
 			<key>name</key>
 			<string>constant.language.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(gen|generate)\b\s*\b(zone)?\b\s*\b(copy|merge|reflect|separate)?\b</string>
+			<string>^\s*\b(gen|generate|group)\b\s*\b(block|zone)?\b\s*\b(copy|merge|reflect|separate)?\b</string>
 			<key>name</key>
 			<string>constant.language.f3dats</string>
 		</dict>
@@ -61,6 +60,12 @@
 			<string>\b(range)\b\s+</string>
 			<key>name</key>
 			<string>constant.language.f3dat</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\s\b(jkn|jks|jfric|jcoh|jdil|jten|jrfri|jresc|jrten)\b</string>
+			<key>name</key>
+			<string>variable.parameter.type.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>

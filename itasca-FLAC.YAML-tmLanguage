@@ -4,7 +4,6 @@ name: Itasca FLAC
 scopeName: source.f3dat
 fileTypes:
 - f3dat
-- dat
 - f3fis
 - fis
 - fin
@@ -19,14 +18,16 @@ patterns:
   name: constant.numeric.integer.decimal.f3dat
 - match: ^\s*\b(call|clean|config|cyc|cycle|expgrid|grid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b
   name: constant.language.f3dat
-- match: ^\s*\b(apply|attach|delete|error|fix|free|geometry|group|his|hist|history|ini|initial|int|interface|list|local|model|plot|print|prop|step|system|water)\b
+- match: ^\s*\b(apply|attach|block|boun|boundary|crack|delete|error|fix|free|geometry|group|his|hist|history|ini|initial|int|interface|jdelete|joint|list|local|model|plot|print|prop|step|system|water|zone)\b
   name: constant.language.f3dat
-- match: ^\s*\b(gen|generate)\b\s*\b(zone)?\b\s*\b(copy|merge|reflect|separate)?\b
+- match: ^\s*\b(gen|generate|group)\b\s*\b(block|zone)?\b\s*\b(copy|merge|reflect|separate)?\b
   name: constant.language.f3dats
 - match: ^\s*\b(struct|structure)\b\s*\b(liner|beam|node)?\b
   name: constant.language.f3dats
 - match: \b(range)\b\s+
   name: constant.language.f3dat
+- match: \s\b(jkn|jks|jfric|jcoh|jdil|jten|jrfri|jresc|jrten)\b
+  name: variable.parameter.type.f3dat
 - match: \s\b(add|aside|ats|begin|bitmap|brick|britt|brittle|bside|bulk|cam-clay|center|coh|cohesion|cylinder|cyl|dd|delete|dens|density|densify|dila|dip|disp|dvel|dynamic|dyt|dytime|echo|elastic|end|export|extra|face|fish|fishcall|flow|fric|from|geom_rep|glued|gpextra|gp|gradient|group|gwflow|hist_rep|id|internal|kappa|key|kn|ks|lambda|large|maxedge|model|mohr|name|node|normal|nstep|nstress|nvel|plane|poro|pp|pressure|off|on|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|sratio|state|strainsoftening|sxx|syy|szz|tens|to|tol|ttab|unbal|unglued|var|vel|x|xdisp|xquiet|xvel|y|ydisp|yquiet|yvel|young|z|zone)\b\s
   name: variable.parameter.type.f3dat
 - match: \b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|endloop|end_loop|section|endsection|end_section|while_stepping)\b
