@@ -4,9 +4,10 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>f3dat</string>
-		<string>f3fis</string>
+		<string>dat</string>
+		<string>fdat</string>
 		<string>fis</string>
+		<string>ffis</string>
 		<string>fin</string>
 	</array>
 	<key>name</key>
@@ -33,13 +34,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(call|clean|config|cyc|cycle|expgrid|grid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b</string>
+			<string>^\s*\b(call|clean|conf|config|cyc|cycle|expgrid|grid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b</string>
 			<key>name</key>
 			<string>constant.language.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^\s*\b(apply|attach|block|boun|boundary|crack|delete|error|fix|free|geometry|group|his|hist|history|ini|initial|int|interface|jdelete|joint|list|local|model|plot|print|prop|step|system|water|zone)\b</string>
+			<string>^\s*\b(apply|attach|block|boun|boundary|crack|delete|error|fix|free|geometry|group|his|hist|history|ini|initial|int|interface|jdelete|joint|list|mod|model|plot|print|prop|step|system|water|zone)\b</string>
 			<key>name</key>
 			<string>constant.language.f3dat</string>
 		</dict>
@@ -69,13 +70,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s\b(add|aside|ats|begin|bitmap|brick|britt|brittle|bside|bulk|cam-clay|center|coh|cohesion|cylinder|cyl|dd|delete|dens|density|densify|dila|dip|disp|dvel|dynamic|dyt|dytime|echo|elastic|end|export|extra|face|fish|fishcall|flow|fric|from|geom_rep|glued|gpextra|gp|gradient|group|gwflow|hist_rep|id|internal|kappa|key|kn|ks|lambda|large|maxedge|model|mohr|name|node|normal|nstep|nstress|nvel|plane|poro|pp|pressure|off|on|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|sratio|state|strainsoftening|sxx|syy|szz|tens|to|tol|ttab|unbal|unglued|var|vel|x|xdisp|xquiet|xvel|y|ydisp|yquiet|yvel|young|z|zone)\b\s</string>
+			<string>\s\b(add|aside|ats|begin|bitmap|brick|britt|brittle|bside|bulk|cam-clay|center|coh|cohesion|cylinder|cyl|dd|delete|dens|density|densify|dila|dip|disp|dvel|dy_damp|dynamic|dyt|dytime|echo|elastic|end|export|extra|face|fish|fishcall|flow|fric|from|geom_rep|glued|gpextra|gp|gradient|group|gwflow|hist_rep|hyst|id|internal|kappa|key|kn|ks|lambda|large|local|maxedge|model|mohr|name|nmregion|node|normal|nstep|nstress|nvel|plane|poro|pp|pressure|off|on|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|sratio|state|strainsoftening|sxx|syy|szz|tens|to|tol|ttab|unbal|unglued|var|vel|x|xdisp|xquiet|xvel|y|ydisp|yquiet|yvel|young|z|zone)\b\s</string>
 			<key>name</key>
 			<string>variable.parameter.type.f3dat</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|exit|loop|while|foreach|endloop|end_loop|section|endsection|end_section|while_stepping)\b</string>
+			<string>\b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|endif|exit|loop|while|foreach|endloop|endLoop|end_loop|section|endsection|end_section|while_stepping|whilestepping)\b</string>
 			<key>name</key>
 			<string>keyword.language.f3dat</string>
 		</dict>
@@ -92,14 +93,22 @@
 			<string>keyword.operator.f3dat</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>math functions</string>
+		</dict>
+		<dict>
 			<key>match</key>
-			<string>\b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|exp|grand|ln|log|unit)\b</string>
+			<string>\b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|dot|exp|grand|ln|log|mag|max|min|pi|round|sgn|sin|sqrt|tan|unit|urand|xcomp|ycomp|zcomp)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>constructors and destructors</string>
+		</dict>
+		<dict>
 			<key>match</key>
-			<string>\b\s*(dot|error|float|int|mag|max|min|not|null|or|pi|round|sgn|sin|sqrt|tan|union|urand|vector|xcomp|ycomp|zcomp)\b</string>
+			<string>\b\s*(array|del_table|float|get_array|get_mem|lose_array|lose_mem|int|not|null|or|string|table|union|vector)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>
@@ -117,7 +126,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>((\'|\")[a-zA-Z,0-9,_,\s,\.,\,,/,\-,\*,:,=,!]*(\'|\"))</string>
+			<string>((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,,\;,\:,\+,\-,\*,\%,\@,\/,\\,\(,\),\[,\],\{,\}]*(\'|\"))</string>
 			<key>name</key>
 			<string>string.language.f3dat</string>
 		</dict>
@@ -126,6 +135,10 @@
 			<string>(\[|\])</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>fish function execution in commandline</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -143,6 +156,10 @@
 			</dict>
 			<key>match</key>
 			<string>(\@\w+)\(?([a-zA-Z0-9,\.,_]*)\)?\s*</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>fish function definition</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -167,6 +184,10 @@
 			<string>^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>array table memory</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -176,11 +197,23 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>\b(array_dim|array_size|buildstr|del_table|get_array|get_mem|lose_array|lose_mem|mem|fmem|imem|open|out|parse|read|strlen|string|substr|write|table|table_size|x|xtable|y|ytable)\b\(</string>
+			<string>\b(array_dim|array_size|buildstr|mem|fmem|imem|open|out|parse|read|strlen|substr|write|table_size|x|xtable|y|ytable)\b\(</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.f3dat</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\b(ex_([0-9]+))\b\(</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(array|at_list|b_zone|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list|block_head)\b\s*</string>
+			<string>\b(at_list|b_zone|clock|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list|block_head)\b\s*</string>
 			<key>name</key>
 			<string>entity.name.function.f3dat</string>
 		</dict>
@@ -206,7 +239,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(flags|gp_disp|gp_extra|gp_funbal|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_removegroup|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(</string>
+			<string>(flags|gmsmul|gp_disp|gp_extra|gp_funbal|gp_group|gp_linkindex|gp_linkzone|gp_near|gp_next|gp_pos|gp_removegroup|gp_xdisp|gp_xfunbal|gp_xload|gp_xpos|gp_ydisp|gp_yfunbal|gp_yload|gp_ypos|gp_zdisp|gp_zfunbal|gp_zload|gp_zpos|gp_zvel)\(</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -230,7 +263,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(xen|ycen|z_apply|z_cen|z_density|z_extra|z_faceextra|z_facegp|z_faceremovegroup|z_facegroup|z_facenorm|z_find|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(</string>
+			<string>(xen|ycen|zmsmul|z_apply|z_cen|z_density|z_extra|z_faceextra|z_facegp|z_faceremovegroup|z_facegroup|z_facenorm|z_find|z_group|z_id|z_join|z_linkindex|z_linkzone|z_model|z_next|z_pp|z_prop|z_volume|z_xcen|z_ycen|z_zcen)\(</string>
 		</dict>
 		<dict>
 			<key>captures</key>
