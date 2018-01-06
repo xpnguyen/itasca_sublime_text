@@ -33,7 +33,7 @@ patterns:
   name: variable.parameter.type.f3dat
 - match: \b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|endif|exit|loop|while|foreach|endloop|endLoop|end_loop|section|endsection|end_section|while_stepping|whilestepping)\b
   name: keyword.language.f3dat
-- match: \s*&\s*$\n?
+- match: \s*(\&|\.\.\.)\s*$\n?
   name: keyword.language.f3dat
 - match: \s*(=|\*|\+|\^|\-|\/|\#|\,)\s*
   name: keyword.operator.f3dat
@@ -41,7 +41,7 @@ patterns:
 - match: \b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|dot|exp|grand|ln|log|mag|max|min|pi|round|sgn|sin|sqrt|tan|unit|urand|xcomp|ycomp|zcomp)\b
   name: storage.type.function.f3dat
 - comment: constructors and destructors
-- match: \b\s*(array|del_table|float|get_array|get_mem|lose_array|lose_mem|int|not|null|or|string|table|union|vector)\b
+- match: \b\s*(array|del_table|float|get_array|get_mem|lose_array|lose_mem|int|not|notnull|null|or|string|table|union|vector)\b
   name: storage.type.function.f3dat
 - match: ((;)(?!\{).*$\n?)
   name: comment.language.f3dat
@@ -69,7 +69,10 @@ patterns:
 - match: \b(ex_([0-9]+))\b\(
   captures:
     '1': {name: entity.name.function.f3dat}
-- match: \b(at_list|b_zone|clock|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list|block_head)\b\s*
+- match: \b(at_list|b_zone|clock|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|zone_head|z_list|block_head)\b\s*
+  name: entity.name.function.f3dat
+- comment: FLAC -Specific Scalar Variables
+- match: \b(xgrav|ygrav|igp|izones|jgp|jzones)\b\s*
   name: entity.name.function.f3dat
 - match: (at_master|at_qweight|at_slave|at_type|at_weight)\(
   captures:

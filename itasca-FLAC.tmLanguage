@@ -82,7 +82,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\s*&amp;\s*$\n?</string>
+			<string>\s*(\&amp;|\.\.\.)\s*$\n?</string>
 			<key>name</key>
 			<string>keyword.language.f3dat</string>
 		</dict>
@@ -108,7 +108,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(array|del_table|float|get_array|get_mem|lose_array|lose_mem|int|not|null|or|string|table|union|vector)\b</string>
+			<string>\b\s*(array|del_table|float|get_array|get_mem|lose_array|lose_mem|int|not|notnull|null|or|string|table|union|vector)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>
@@ -213,7 +213,17 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(at_list|b_zone|clock|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|gravity|grav|xgrav|ygrav|zgrav|zone_head|z_list|block_head)\b\s*</string>
+			<string>\b(at_list|b_zone|clock|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|zone_head|z_list|block_head)\b\s*</string>
+			<key>name</key>
+			<string>entity.name.function.f3dat</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>FLAC -Specific Scalar Variables</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(xgrav|ygrav|igp|izones|jgp|jzones)\b\s*</string>
 			<key>name</key>
 			<string>entity.name.function.f3dat</string>
 		</dict>
