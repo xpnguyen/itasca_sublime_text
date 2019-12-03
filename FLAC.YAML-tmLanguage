@@ -1,6 +1,6 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
-name: Itasca FLAC
+name: FLAC
 scopeName: source.f3dat
 fileTypes:
 - dat
@@ -8,8 +8,6 @@ fileTypes:
 - fis
 - ffis
 - fin
-- 3ddat
-- 3dfis
 uuid: a4358a63-d396-4e0c-9b3d-f0de59021e43
 
 patterns:

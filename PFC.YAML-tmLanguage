@@ -3,9 +3,9 @@
 name: PFC5+
 scopeName: source.p3dat
 fileTypes:
-- f3prj
-- f3dat
-- f3fis
+- p3prj
+- p3dat
+- p3fis
 uuid: a4358a63-d396-4e0c-9b3d-f0de59021e43
 
 patterns:

@@ -4,9 +4,9 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>f3prj</string>
-		<string>f3dat</string>
-		<string>f3fis</string>
+		<string>p3prj</string>
+		<string>p3dat</string>
+		<string>p3fis</string>
 	</array>
 	<key>name</key>
 	<string>PFC5+</string>
