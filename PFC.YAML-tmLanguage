@@ -1,6 +1,6 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
-name: FLAC3D6+
+name: PFC5+
 scopeName: source.p3dat
 fileTypes:
 - f3prj
