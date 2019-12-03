@@ -55,16 +55,24 @@ patterns:
     '3': {name: variable.parameter.function.f3dat}
 
 - comment: constructors and destructors
-- match: \b\s*(array|del_table|float|get_array\(|get_mem\(|get_socket|lose_array\(|lose_mem|int|not|notnull|null|or|string|table|union|vector)\b
+- match: \b\s*(array|del_table|float|get_socket|lose_mem|int|not|notnull|null|or|string|table|union|vector)\b
+  name: storage.type.function.f3dat
+- match: \b\s*(get_array|get_mem|lose_array)\(\b
   name: storage.type.function.f3dat
 
 - comment: General functions
 - comment: General functions Math
-- match: (abs\(|acos\(|and\(|asin\(|atan\(|atan2\(|cos\(|cross\(|degrad|dot\(|exp\(|grand|ln\(|log\(|lshift\(|mag\(|mag2\(|max\(|min\(|not\(|or\(|pi|round\(|rshift\(|sgn\(|sin\(|sqrt\(|tan\(|unit\(|urand)
+- match: (degrad|grand|pi|urand)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (abs|acos|and|asin|atan|atan2|cos|cross|dot|exp|ln|log|lshift|mag|mag2|max|min|not|or|round|rshift|sgn|sin|sqrt|tan|unit)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Utility
-- match: (array_dim\(|array_size\(|buildstr\(|char\(|clock|code_majorversion|code_minorversion|code_name|ddfromnorm\(|dipfromnorm\(|environment\(|error|fc_arg\(|find_range\(|fish_majorversion|fish_minorversion|float\(|from_principal\(|in\(|in_range\(|inbox\(|index\(|index_type\(|input\(|int\(|list_find\(|list_size\(|msgbox\(|normfromdip\(|normfromdipdd\(|notify\(|null|out\(|pointer_type\(|pointer_typeid\(|pointer_typename\(|principal_stress\(|realtime|sleep\(|string\(|strlen\(|substr\(|tolower\(|toupper\(|type\(|vector\(|xcomp\(|ycomp\(|zcomp\()
+- match: (dtp_list|gset_list|clock|code_majorversion|code_minorversion|code_name|error|fish_majorversion|fish_minorversion|null|realtime|uds_list|uds_head|)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (array_dim|array_size|buildstr|char|ddfromnorm|dipfromnorm|environment|fc_arg|find_range|float|from_principal|in|in_range|inbox|index|index_type|input|int|list_find|list_size|msgbox|normfromdip|normfromdipdd|notify|out|pointer_type|pointer_typeid|pointer_typename|principal_stress|sleep|string|strlen|substr|tolower|toupper|type|vector|xcomp|ycomp|zcom)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Table
@@ -72,11 +80,11 @@ patterns:
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions User-defined Data
-- match: (uds_list|uds_head|uds_next\(|uds_find\(|uds_near\(|uds_create\(|uds_id\(|uds_group\(|uds_isgroup\(|uds_removegroup\(|uds_extra\(|uds_pos\(|uds_remove\(|uds_value\(|udv_list|udv_head|udv_next\(|udv_find\(|udv_near\(|udv_create\(|udv_id\(|udv_group\(|udv_isgroup\(|udv_removegroup\(|udv_extra\(|udv_pos\(|udv_value\(|udv_mag\(|udv_dip\(|udv_dd\(|udv_dir\(|udv_remove\(|udt_list|udt_head|udt_next\(|udt_find\(|udt_near\(|udt_create\(|udt_id\(|udt_group\(|udt_isgroup\(|udt_removegroup\(|udt_extra\(|udt_pos\(|udt_value\(|udt_prin\(|udt_dir\(|udt_setdir\(|udt_remove\()
+- match: (uds_next|uds_find|uds_near|uds_create|uds_id|uds_group|uds_isgroup|uds_removegroup|uds_extra|uds_pos|uds_remove|uds_value|udv_list|udv_head|udv_next|udv_find|udv_near|udv_create|udv_id|udv_group|udv_isgroup|udv_removegroup|udv_extra|udv_pos|udv_value|udv_mag|udv_dip|udv_dd|udv_dir|udv_remove|udt_list|udt_head|udt_next|udt_find|udt_near|udt_create|udt_id|udt_group|udt_isgroup|udt_removegroup|udt_extra|udt_pos|udt_value|udt_prin|udt_dir|udt_setdir|udt_remove)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Label
-- match: (label_arrow\(|label_create\(|label_delete\(|label_end\(|label_find\(|label_head|label_next\(|label_pos\(|label_text\()
+- match: (label_arrow|label_create|label_delete|label_end|label_find|label_head|label_next|label_pos|label_text)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Memory
@@ -84,45 +92,66 @@ patterns:
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions I/O file
-- match: (close|open\(|read\(|write\(|parse\(|pre_parse\()
+- match: (close)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (open|read|write|parse|pre_parse)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions I/O socket
-- match: (lose_socket\(|sclose\(|sopen\(|sread\(|swrite\()
+- match: (lose_socket|sclose|sopen|sread|swrite)
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Email
-- match: (mail_addattachment\(|mail_addrecipient\(|mail_clear|mail_deleterecipient\(|mail_deleteattachment\(|mail_send|mail_setaccount\(|mail_setbody\(|mail_setdomain\(|mail_sethost\(|mail_setpassword\(|mail_setsubject\()
+- match: (mail_clear|mail_send|)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (mail_addattachment|mail_addrecipient|mail_deleterecipient|mail_deleteattachment|mail_setaccount|mail_setbody|mail_setdomain|mail_sethost|mail_setpassword|mail_setsubjec)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Geometry
-- match: (gset_find\(|gset_create\(|gset_list|gset_remove\(|gset_id\(|gset_name|gn_find\(|gn_near\(|gn_create\(|gn_list\(|gn_remove\(|gn_id\(|gn_group\(|gn_isgroup\(|gn_groupnum\(|gn_groupex\(|gn_extra\(|gn_startedge\(|gn_startindex\(|gn_pos\(|ge_find\(|ge_near\(|ge_create\(|ge_list\(|ge_remove\(|ge_id\(|ge_group\(|ge_isgroup\(|ge_groupnum\(|ge_groupex\(|ge_extra\(|ge_node\(|ge_nextedge\(|ge_nextindex\(|ge_startpoly\(|ge_startindex\(|ge_dir\(|ge_pos\(|ge_cen\(|gpol_find\(|gpol_near\(|gpol_create\(|gpol_addedge\(|gpol_addnode\(|gpol_close\(|gpol_check\(|gpol_list\(|gpol_remove\(|gpol_id\(|gpol_group\(|gpol_isgroup\(|gpol_extra\(|gpol_size\(|gpol_edge\(|gpol_node\(|gpol_normal\(|gpol_nextpoly\(|gpol_nextindex\(|gpol_cen\(|gpol_area\())
+- match: (gset_find|gset_create|gset_remove|gset_id|gset_name|gn_find|gn_near|gn_create|gn_list|gn_remove|gn_id|gn_group|gn_isgroup|gn_groupnum|gn_groupex|gn_extra|gn_startedge|gn_startindex|gn_pos|ge_find|ge_near|ge_create|ge_list|ge_remove|ge_id|ge_group|ge_isgroup|ge_groupnum|ge_groupex|ge_extra|ge_node|ge_nextedge|ge_nextindex|ge_startpoly|ge_startindex|ge_dir|ge_pos|ge_cen|gpol_find|gpol_near|gpol_create|gpol_addedge|gpol_addnode|gpol_close|gpol_check|gpol_list|gpol_remove|gpol_id|gpol_group|gpol_isgroup|gpol_extra|gpol_size|gpol_edge|gpol_node|gpol_normal|gpol_nextpoly|gpol_nextindex|gpol_cen|gpol_area)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions DFN
-- match: (dfn_list|dfn_find\(|dfn_typeid|dfn_typename|dfn_p10\(|dfn_p10geom\(|dfn_p20\(|dfn_p21\(|dfn_avetrace\(|dfn_number|dfn_delete\(|dfn_add\(|dfn_id\(|dfn_flist\(|dfn_ilist|dfn_finbox\(|dfn_carray\(|dfn_dcenter\(|dfn_density\(|dfn_percolation\()
+- match: (dfn_list|dfn_typeid|dfn_typename|dfn_number|dfn_ilist)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (dfn_find|dfn_p10|dfn_p10geom|dfn_p20|dfn_p21|dfn_avetrace|dfn_delete|dfn_add|dfn_id|dfn_flist|dfn_finbox|dfn_carray|dfn_dcenter|dfn_density|dfn_percolation)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Fracture
-- match: (dfrac_find\(|dfrac_near\(|dfrac_typeid|dfrac_typename|dfrac_remove\(|dfrac_disk\(|dfrac_prop\(|dfrac_carray\(|dfrac_iarray\(|dfrac_varray\(|dfrac_radius\(|FLT|dfrac_dip\(|dfrac_dipd\(|FLT|dfrac_area\(|dfrac_extra\(|dfrac_group\(|dfrac_number|dfrac_id\(|dfrac_pnear\(|dfrac_dfn\(|dfrac_isgroup\(|dfrac_removegroup\()
+- match: (dfrac_typeid|dfrac_typename||dfrac_number|)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (dfrac_find|dfrac_near|dfrac_remove|dfrac_disk|dfrac_prop|dfrac_carray|dfrac_iarray|dfrac_varray|dfrac_radius|dfrac_dip|dfrac_dipd|dfrac_area|dfrac_extra|dfrac_group|dfrac_id|dfrac_pnear|dfrac_dfn|dfrac_isgroup|dfrac_removegroup)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Fracture Vertex
-- match: (dvert_find\(|dvert_typeid|dvert_typename|dvert_id\(|dvert_pos\()
+- match: (dvert_typeid|dvert_typename|)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (dvert_find|dvert_id|dvert_pos)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Fracture Intersetion
-- match: (di_find\(|di_typeid|di_typename|di_end1\(|di_end2\(|di_pos1\(|di_pos2\()
+- match: (di_typeid|di_typename)
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (di_find|di_end1|di_end2|di_pos1|di_pos2)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: General functions Fracture Template
-- match: (dtp_list|dtp_find\(|dtp_get\(|dtp_id\(|dtp_name\(|dtp_stype\(|dtp_snbp\(|dtp_sparam\(|dtp_smin\(|dtp_smax\(|dtp_otype\(|dtp_onbp\(|dtp_oparam\(|dtp_dmin\(|dtp_dmax\(|dtp_ddmin\(|dtp_ddmax\(|dtp_ptype\(|dtp_pnbp\(|dtp_pparam\(|dtp_pmin\(|dtp_pmax\()
+- match: (dtp_find|dtp_get|dtp_id|dtp_name|dtp_stype|dtp_snbp|dtp_sparam|dtp_smin|dtp_smax|dtp_otype|dtp_onbp|dtp_oparam|dtp_dmin|dtp_dmax|dtp_ddmin|dtp_ddmax|dtp_ptype|dtp_pnbp|dtp_pparam|dtp_pmin|dtp_pmax)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 
 - comment: FLAC3D5 related functions
 - comment: General FLAC3D functions
-- match: (at_list|aunbc|crdt|crtime|dim|do_update|dydt|dytime|find_gp\(|find_lk\(|find_nd\(|find_s\(|find_zone\(|fldt|fltime|fluid_ratio|fos_f|gen_ratio\(|gp_head|gp_list|gp_near\(|gp_near_live\(|gp_nearall\(|gp_find\(|grav|i_find\(|i_head|i_list|large|lk_find\(|lk_head|lk_list|mech_ratio|munbc|nd_head|nd_list|nd_near\(|ngp|nzone|processors|s_find\(|s_head|s_near\(|step|strnorm|thdt|therm_ratio|thtime|timestep|unbal|xgrav|ygrav|zgrav|z_containing\(|z_find\(|z_list|z_near\(|z_near_live\(|z_nearall\(|zone_head)\(
+- match: \b(at_list|aunbc|crdt|crtime|dim|do_update|dydt|dytime|fldt|fltime|fluid_ratio|fos_f|gp_head|gp_list|grav|i_head|i_list|large|lk_head|lk_list|mech_ratio|munbc|nd_head|nd_list|ngp|nzone|processors|s_head|step|strnorm|thdt|therm_ratio|thtime|timestep|unbal|xgrav|ygrav|zgrav|z_list|zone_head)\b
+  captures:
+    '1': {name: entity.name.function.f3dat}
+- match: (find_gp|find_lk|find_nd|find_s|find_zone|gen_ratio|gp_near|gp_near_live|gp_nearall|gp_find|i_find|lk_find|nd_near|s_find|s_near|z_containing|z_find|z_near|z_near_live|z_nearall)\(
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: Gridpoint variables
@@ -134,7 +163,7 @@ patterns:
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: Zone field data
-- match: (zfd_dataindex|zfd_dataname|zfd_effective|zfd_extra|zfd_getdata\(|zfd_getgpdata\(|zfd_hidefluidnull|zfd_hidemechnull|zfd_hidethermnull|zfd_initialize|zfd_methodindex|zfd_methodname|zfd_power|zfd_property|zfd_radratio|zfd_reset|zfd_tolerance)
+- match: (zfd_dataindex|zfd_dataname|zfd_effective|zfd_extra|zfd_getdata|zfd_getgpdata|zfd_hidefluidnull|zfd_hidemechnull|zfd_hidethermnull|zfd_initialize|zfd_methodindex|zfd_methodname|zfd_power|zfd_property|zfd_radratio|zfd_reset|zfd_tolerance)
   captures:
     '1': {name: entity.name.function.f3dat}
 - comment: Interfaces
