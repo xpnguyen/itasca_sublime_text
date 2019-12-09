@@ -81,6 +81,33 @@
 			<string>^(define|def|fish define|fish def|fish operator)\s*([\w+_]+)\(?([a-zA-Z0-9\_,\s*]*)*\)?</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>fish function execution in commandline</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.p3dat</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.p3dat</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(\@\w+)\(\s*([a-zA-Z, _, \s]*)\s*\)\s*</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(\@\w+)\s*</string>
+			<key>name</key>
+			<string>storage.type.function.p3dat</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>^\s*\b(call|clean|construct|cy|cyc|cycle|list|load|set|solve|step|struct|title)\b\s+</string>
 			<key>name</key>
@@ -163,33 +190,6 @@
 		<dict>
 			<key>match</key>
 			<string>(\[|\])</string>
-			<key>name</key>
-			<string>storage.type.function.p3dat</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>fish function execution in commandline</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.function.p3dat</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.function.p3dat</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(\@\w+)\(\s*([a-zA-Z, _, \s]*)\s*\)\s*</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(\@\w+)\s*</string>
 			<key>name</key>
 			<string>storage.type.function.p3dat</string>
 		</dict>
@@ -280,14 +280,14 @@
 			<string>\.\b(age|all|app|axial|component|contactmap|create|disp|extra|facetlist|facet|find|fluidnull|global|gp|gravity|group|keys|index|live|local|mechnull|name|near|normal|num|pointer|porosity|pos|radius|ratio|reference|real|regex|shear|string|thermnull|timestep|unbal|value|velocity|vel|vertex|x|xx|xy|xz|y|yy|yz|z|zz)\b(\.|\(|\W)</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>constructors</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>\b(array|boolean|comp|false|float|gravity|grav|int|list|map|memory|not|null|off|on|or|string|table|tensor|true|type|vector)\b</string>
 			<key>name</key>
 			<string>storage.type.function.p3dat</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>constructors</string>
 		</dict>
 	</array>
 	<key>scopeName</key>

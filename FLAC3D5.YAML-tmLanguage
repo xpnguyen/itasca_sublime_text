@@ -43,12 +43,12 @@ patterns:
 - match: (\[|\])
   name: storage.type.function.f3dat
 - comment: fish function execution in commandline
-- match: (\@\w+)\(?([a-zA-Z0-9,\.,_]*)\)?\s*
+- match: (\@\w+)\(?([a-zA-Z0-9,\.,_\s]*)\)?\s*
   captures:
     '1': {name: storage.type.function.f3dat}
     '2': {name: variable.parameter.function.f3dat}
 - comment: fish function definition
-- match: ^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?
+- match: ^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_,\s]*)\)?\s*$\n?
   captures:
     '1': {name: keyword.language.f3dat}
     '2': {name: storage.type.function.f3dat}
@@ -62,7 +62,7 @@ patterns:
 
 - comment: General functions
 - comment: General functions Math
-- match: (degrad|grand|pi|urand)
+- match: \b(degrad|grand|pi|urand)\b
   captures:
     '1': {name: entity.name.function.f3dat}
 - match: (abs|acos|and|asin|atan|atan2|cos|cross|dot|exp|ln|log|lshift|mag|mag2|max|min|not|or|round|rshift|sgn|sin|sqrt|tan|unit)\(

@@ -29,6 +29,13 @@ patterns:
     '1': {name: keyword.language.p3dat}
     '2': {name: storage.type.function.p3dat}
     '3': {name: variable.parameter.function.p3dat}
+- comment: fish function execution in commandline
+- match: (\@\w+)\(\s*([a-zA-Z, _, \s]*)\s*\)\s*
+  captures:
+    '1': {name: storage.type.function.p3dat}
+    '2': {name: variable.parameter.function.p3dat}
+- match: (\@\w+)\s*
+  name: storage.type.function.p3dat
 - match: ^\s*\b(call|clean|construct|cy|cyc|cycle|list|load|set|solve|step|struct|title)\b\s+
   name: constant.language.p3dat
 - match: \b(range|calm)\b\s+
@@ -54,13 +61,6 @@ patterns:
   name: keyword.language.p3dat
 - match: (\[|\])
   name: storage.type.function.p3dat
-- comment: fish function execution in commandline
-- match: (\@\w+)\(\s*([a-zA-Z, _, \s]*)\s*\)\s*
-  captures:
-    '1': {name: storage.type.function.p3dat}
-    '2': {name: variable.parameter.function.p3dat}
-- match: (\@\w+)\s*
-  name: storage.type.function.p3dat
 - comment: FISH functions
 - match: \b(attach|ball|clump|comp|contact|creep|dfn|domain|dynamic|fracture|fragment|global|geom|gp|interface|list|mech|measure|struct|type|wall|zone)\b\.\b(active|add|addfracture|age|cable|create|code|contactmap|containing|count|create|damp|delete|density|disp|elem|end1|end2|end2|error|extra|facetlist|face|facet|field|find|fix|force|fracture|gap|gravity|group|groupmap|head|id|interface|isgroup|isprop|join|link|list|load|mass|master|max|min|model|near|next|node|normal|num|open|out|pebble|persist|pile|pointer|poly|porosity|pos_x|pos_y|prop|pos_z|pos|pp|radius|range|real|remove|resize|reverse|seq|sequence|set|set_damp|shear|size|slave|solve|sort|step|strain|stress|sum|time|timestep|to|type|typeid|unbal|upper|velocity|vel|vertex|vertexlist|vol|write|x|y|z)\b(\.|\(|\W)*(\b(add|all|area|close|component|create|deformed|delete|disp|extra|find|force|get|gp|gravity|group|head|hide|id|index|init|int|length|link|list|log|max|method|min|name|near|next|normal|penetration|pos|power|prop|quantity|radius|rate|reset|source|tol|total|type|unbal|update|vel|x|xx|y|yy|z|zz)\b)*
   captures:
@@ -81,6 +81,6 @@ patterns:
 - match: \.\b(age|all|app|axial|component|contactmap|create|disp|extra|facetlist|facet|find|fluidnull|global|gp|gravity|group|keys|index|live|local|mechnull|name|near|normal|num|pointer|porosity|pos|radius|ratio|reference|real|regex|shear|string|thermnull|timestep|unbal|value|velocity|vel|vertex|x|xx|xy|xz|y|yy|yz|z|zz)\b(\.|\(|\W)
   captures:
     '1': {name: entity.name.function.p3dat}
+- comment: constructors
 - match: \b(array|boolean|comp|false|float|gravity|grav|int|list|map|memory|not|null|off|on|or|string|table|tensor|true|type|vector)\b
   name: storage.type.function.p3dat
-- comment: constructors

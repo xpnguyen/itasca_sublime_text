@@ -128,7 +128,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\@\w+)\(?([a-zA-Z0-9,\.,_]*)\)?\s*</string>
+			<string>(\@\w+)\(?([a-zA-Z0-9,\.,_\s]*)\)?\s*</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -154,7 +154,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?</string>
+			<string>^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_,\s]*)\)?\s*$\n?</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -190,7 +190,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(degrad|grand|pi|urand)</string>
+			<string>\b(degrad|grand|pi|urand)\b</string>
 		</dict>
 		<dict>
 			<key>captures</key>
