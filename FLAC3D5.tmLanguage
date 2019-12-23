@@ -128,7 +128,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\@\w+)\(?([a-zA-Z0-9,\.,_\s]*)\)?\s*</string>
+			<string>(\@\w+)\(?([a-zA-Z0-9,\.,_,\[,\],\s]*)\)?\s</string>
 		</dict>
 		<dict>
 			<key>comment</key>

@@ -3,11 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
-	<array>
-		<string>f3prj</string>
-		<string>f3dat</string>
-		<string>f3fis</string>
-	</array>
+	<false/>
 	<key>name</key>
 	<string>FLAC3D6+</string>
 	<key>patterns</key>

@@ -1,5 +1,3 @@
-# [PackageDev] target_format: plist, ext: tmLanguage
----
 name: FLAC3D5
 scopeName: source.f3dat
 fileTypes:
@@ -43,7 +41,7 @@ patterns:
 - match: (\[|\])
   name: storage.type.function.f3dat
 - comment: fish function execution in commandline
-- match: (\@\w+)\(?([a-zA-Z0-9,\.,_\s]*)\)?\s*
+- match: (\@\w+)\(?([a-zA-Z0-9,\.,_,\[,\],\s]*)\)?\s
   captures:
     '1': {name: storage.type.function.f3dat}
     '2': {name: variable.parameter.function.f3dat}
