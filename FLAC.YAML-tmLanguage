@@ -1,7 +1,7 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
 name: FLAC
-scopeName: source.f3dat
+scopeName: source.fdat
 fileTypes:
 - dat
 - fdat
@@ -12,82 +12,82 @@ uuid: a4358a63-d396-4e0c-9b3d-f0de59021e43
 
 patterns:
 - match: \b(?i:(\d+\.\d*(e[\-\+]?\d+)?))(?=[^a-zA-Z_])
-  name: constant.numeric.float.f3dat
+  name: constant.numeric.float.fdat
 - match: \b(?i:(\d+e[\-\+]?\d+))
-  name: constant.numeric.float.f3dat
+  name: constant.numeric.float.fdat
 - match: \b([1-9]+[0-9]*|0)
-  name: constant.numeric.integer.decimal.f3dat
+  name: constant.numeric.integer.decimal.fdat
 - match: ^\s*\b(call|clean|conf|config|cyc|cycle|expgrid|grid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b
-  name: constant.language.f3dat
+  name: constant.language.fdat
 - match: ^\s*\b(apply|attach|block|boun|boundary|crack|delete|error|fix|free|geometry|global|group|his|hist|history|ini|initial|int|interface|jdelete|joint|list|local|mod|model|plot|print|prop|step|system|water|zone)\b
-  name: constant.language.f3dat
+  name: constant.language.fdat
 - match: ^\s*\b(gen|generate|group)\b\s*\b(block|zone)?\b\s*\b(copy|merge|reflect|separate)?\b
-  name: constant.language.f3dats
+  name: constant.language.fdats
 - match: ^\s*\b(struct|structure)\b\s*\b(liner|beam|node)?\b
-  name: constant.language.f3dats
+  name: constant.language.fdats
 - match: \b(range)\b\s+
-  name: constant.language.f3dat
+  name: constant.language.fdat
 - match: \s\b(jkn|jks|jfric|jcoh|jdil|jten|jrfri|jresc|jrten)\b
-  name: variable.parameter.type.f3dat
+  name: variable.parameter.type.fdat
 - match: \s\b(add|aside|ats|begin|bitmap|brick|britt|brittle|bside|bulk|cam-clay|center|coh|cohesion|cylinder|cyl|dd|delete|dens|density|densify|dila|dip|disp|dvel|dy_damp|dynamic|dyt|dytime|echo|elastic|end|export|extra|face|fish|fishcall|flow|fric|from|geom_rep|glued|gpextra|gp|gradient|group|gwflow|hist_rep|hyst|id|internal|kappa|key|kn|ks|lambda|large|local|maxedge|model|mohr|name|nmregion|node|normal|nstep|nstress|nvel|plane|poro|pp|pressure|off|on|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|sratio|state|strainsoftening|sxx|syy|szz|tens|to|tol|ttab|unbal|unglued|var|vel|x|xdisp|xquiet|xvel|y|ydisp|yquiet|yvel|young|z|zone)\b\s
-  name: variable.parameter.type.f3dat
+  name: variable.parameter.type.fdat
 - match: \b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|endif|exit|loop|while|foreach|endloop|endLoop|end_loop|section|endsection|end_section|while_stepping|whilestepping)\b
-  name: keyword.language.f3dat
+  name: keyword.language.fdat
 - match: \s*(\&|\.\.\.)\s*$\n?
-  name: keyword.language.f3dat
+  name: keyword.language.fdat
 - match: \s*(=|\*|\+|\^|\-|\/|\#|\,)\s*
-  name: keyword.operator.f3dat
+  name: keyword.operator.fdat
 - comment: math functions
 - match: \b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|dot|exp|grand|ln|log|mag|max|min|pi|round|sgn|sin|sqrt|tan|unit|urand|xcomp|ycomp|zcomp)\b
-  name: storage.type.function.f3dat
+  name: storage.type.function.fdat
 - comment: constructors and destructors
 - match: \b\s*(array|del_table|float|get_array|get_mem|lose_array|lose_mem|int|not|notnull|null|or|string|table|union|vector)\b
-  name: storage.type.function.f3dat
+  name: storage.type.function.fdat
 - match: ((;)(?!\{).*$\n?)
-  name: comment.language.f3dat
+  name: comment.language.fdat
 - match: \s*(<|=<|>|>=|#)\s*
-  name: keyword.operator.comparison.f3dat
+  name: keyword.operator.comparison.fdat
 - match: ((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,,\;,\:,\+,\-,\*,\%,\@,\/,\\,\(,\),\[,\],\{,\}]*(\'|\"))
-  name: string.language.f3dat
+  name: string.language.fdat
 - match: (\[|\])
-  name: storage.type.function.f3dat
+  name: storage.type.function.fdat
 - comment: fish function execution in commandline
 - match: (\@\w+)\(?([a-zA-Z0-9,\.,_]*)\)?\s*
   captures:
-    '1': {name: storage.type.function.f3dat}
-    '2': {name: variable.parameter.function.f3dat}
+    '1': {name: storage.type.function.fdat}
+    '2': {name: variable.parameter.function.fdat}
 - comment: fish function definition
 - match: ^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_]*)\)?\s*$\n?
   captures:
-    '1': {name: keyword.language.f3dat}
-    '2': {name: storage.type.function.f3dat}
-    '3': {name: variable.parameter.function.f3dat}
+    '1': {name: keyword.language.fdat}
+    '2': {name: storage.type.function.fdat}
+    '3': {name: variable.parameter.function.fdat}
 - comment: array table memory
 - match: \b(array_dim|array_size|buildstr|mem|fmem|imem|open|out|parse|read|strlen|substr|write|table_size|x|xtable|y|ytable)\b\(
   captures:
-    '1': {name: entity.name.function.f3dat}
+    '1': {name: entity.name.function.fdat}
 - match: \b(ex_([0-9]+))\b\(
   captures:
-    '1': {name: entity.name.function.f3dat}
+    '1': {name: entity.name.function.fdat}
 - match: \b(at_list|b_zone|clock|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|zone_head|z_list|block_head)\b\s*
-  name: entity.name.function.f3dat
+  name: entity.name.function.fdat
 - comment: FLAC -Specific Scalar Variables
 - match: \b(xgrav|ygrav|igp|izones|jgp|jzones)\b\s*
-  name: entity.name.function.f3dat
+  name: entity.name.function.fdat
 - match: (at_master|at_qweight|at_slave|at_type|at_weight)\(
   captures:
-    '1': {name: entity.name.function.f3dat}
+    '1': {name: entity.name.function.fdat}
 
 - comment: FLAC - .fin data
 - match: \b(str_fin|str_pnt|nvstr|nvels|nvnod|nvtyp|nvsupp|ksnode|ksels|ksnseq|kseseq|kstyp|kssupp|kssext|kelext|kelid|keln1|keln2|kelcod|keltyp|keltad|kell|kelfsh|kelfax|kelm1|kelm2|kelut1|kelut2|kelhin|kelhm1|kelhm2|keleax|keluti|kelcod2|kelpax|kelpbe1|kelpbe2|kelsta1|kelsta2|kelpret|kelsp2|kelsp3|kelsp4|kelsp5|kndext|kndid|kndx|kndy|kndud1|kndud2|kndu1|kndu2|kndthd|kndth|kndmx|kndmy|kndmr|kndi|kndj|kndadd|kndf1|kndf2|kndfr|kndf1c|kndf2c|kndfrc|kndcod|kndpin|kndap1|kndap2|kndapr|kndxfx|kndyfx|kndrfx|kndefl|kndt1|kndt2|kndbfl|kndw1|kndw2|kndw3|kndw4|kndfs|kndtad|kndmxd|kndmyd|kndmrd|kndmsf|kndma1|kndma2|kndnfl|kndfn|kndup|kndum|kndua|kndunr|kndhfr|kndhtd|kndhth|kndhin|kndhmi|kndhtr|kndep|kndnc|kndnc1|kndlo1|kndlo2|kndfor1|kndfor2|kndus|kndcstr|kndcarea|kndsfce|knddt|kndtadd|kndcod2|kndsxxi|kndsxyi|kndsyyi|kndszzi|kndppi|kndsi|kndcfac|kndaxf1|kndaxf2|kndrsd|kndxo|kndyo|kndacc1|kndacc2|kndaccth|kndsp7|kndsp8|kndsp9|ktypex|ktype|ktypi|ktypar|ktypid|ktypei|ktypkb|ktypsb|ktypyi|ktyppm|ktyden|ktypkn|ktypks|ktypfb|ktypyc|ktypsn|ktyppe|ktypfn|ktypcg|ktyppy|ktypte|ktyphe|ktypwi|ktypra|ktypal|ktypszz|ktypsbtb|ktypfbtb|ktypcftb|ktyptfs|ktypprat|ktypshape|ktypsyi|ktypsyir|ktypsyc|ktypthick|ktypstcw|ktypstns|ktypstwi|ktypstth|ktypstyi|ktypstyc|ktypstkb|ktypstsb|ktypstf0|ktypstf1|ktypsts0|ktypsp1|ktypsp2|ktypsp3|ktypsp4|ktypsp5|ktypsp6|ktypsp7|ktypsp8|ksuext|ksut1|ksut2|ksupro|ksupad|ksufn|ksufs|ksuun|ksuus|ksutad|ksubad|ksutra|ksubra|ksutij|ksubij|ksusub|ksunsm)\b
   captures:
-    '1': {name: entity.name.function.f3dat}
+    '1': {name: entity.name.function.fdat}
 
 
 - comment: UDEC
 - match: \b(b_next|z_y|)\b
   captures:
-    '1': {name: entity.name.function.f3dat}
+    '1': {name: entity.name.function.fdat}
 
 
 

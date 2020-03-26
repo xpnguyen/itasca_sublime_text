@@ -121,11 +121,6 @@
 					<key>name</key>
 					<string>storage.type.function.f3dat</string>
 				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>variable.parameter.function.f3dat</string>
-				</dict>
 			</dict>
 			<key>match</key>
 			<string>(\@\w+)\(?([a-zA-Z0-9,\.,_,\[,\],\s]*)\)?\s</string>
@@ -168,7 +163,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b\s*(get_array|get_mem|lose_array)\(\b</string>
+			<string>\b\s*(get_array|get_mem|lose_array)\b</string>
 			<key>name</key>
 			<string>storage.type.function.f3dat</string>
 		</dict>

@@ -44,7 +44,7 @@ patterns:
 - match: (\@\w+)\(?([a-zA-Z0-9,\.,_,\[,\],\s]*)\)?\s
   captures:
     '1': {name: storage.type.function.f3dat}
-    '2': {name: variable.parameter.function.f3dat}
+    # '2': {name: variable.parameter.function.f3dat}
 - comment: fish function definition
 - match: ^\s*(define|def)\s*([\w+_]+)\s*\(?([a-zA-Z0-9,_,\s]*)\)?\s*$\n?
   captures:
@@ -55,7 +55,7 @@ patterns:
 - comment: constructors and destructors
 - match: \b\s*(array|del_table|float|get_socket|lose_mem|int|not|notnull|null|or|string|table|union|vector)\b
   name: storage.type.function.f3dat
-- match: \b\s*(get_array|get_mem|lose_array)\(\b
+- match: \b\s*(get_array|get_mem|lose_array)\b
   name: storage.type.function.f3dat
 
 - comment: General functions

@@ -18,79 +18,79 @@
 			<key>match</key>
 			<string>\b(?i:(\d+\.\d*(e[\-\+]?\d+)?))(?=[^a-zA-Z_])</string>
 			<key>name</key>
-			<string>constant.numeric.float.f3dat</string>
+			<string>constant.numeric.float.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(?i:(\d+e[\-\+]?\d+))</string>
 			<key>name</key>
-			<string>constant.numeric.float.f3dat</string>
+			<string>constant.numeric.float.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b([1-9]+[0-9]*|0)</string>
 			<key>name</key>
-			<string>constant.numeric.integer.decimal.f3dat</string>
+			<string>constant.numeric.integer.decimal.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^\s*\b(call|clean|conf|config|cyc|cycle|expgrid|grid|impgrid|new|pause|quit|rest|restore|ret|return|sav|save|set|solve|title)\b</string>
 			<key>name</key>
-			<string>constant.language.f3dat</string>
+			<string>constant.language.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^\s*\b(apply|attach|block|boun|boundary|crack|delete|error|fix|free|geometry|global|group|his|hist|history|ini|initial|int|interface|jdelete|joint|list|local|mod|model|plot|print|prop|step|system|water|zone)\b</string>
 			<key>name</key>
-			<string>constant.language.f3dat</string>
+			<string>constant.language.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^\s*\b(gen|generate|group)\b\s*\b(block|zone)?\b\s*\b(copy|merge|reflect|separate)?\b</string>
 			<key>name</key>
-			<string>constant.language.f3dats</string>
+			<string>constant.language.fdats</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>^\s*\b(struct|structure)\b\s*\b(liner|beam|node)?\b</string>
 			<key>name</key>
-			<string>constant.language.f3dats</string>
+			<string>constant.language.fdats</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(range)\b\s+</string>
 			<key>name</key>
-			<string>constant.language.f3dat</string>
+			<string>constant.language.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\s\b(jkn|jks|jfric|jcoh|jdil|jten|jrfri|jresc|jrten)\b</string>
 			<key>name</key>
-			<string>variable.parameter.type.f3dat</string>
+			<string>variable.parameter.type.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\s\b(add|aside|ats|begin|bitmap|brick|britt|brittle|bside|bulk|cam-clay|center|coh|cohesion|cylinder|cyl|dd|delete|dens|density|densify|dila|dip|disp|dvel|dy_damp|dynamic|dyt|dytime|echo|elastic|end|export|extra|face|fish|fishcall|flow|fric|from|geom_rep|glued|gpextra|gp|gradient|group|gwflow|hist_rep|hyst|id|internal|kappa|key|kn|ks|lambda|large|local|maxedge|model|mohr|name|nmregion|node|normal|nstep|nstress|nvel|plane|poro|pp|pressure|off|on|orientation|origin|poiss|prop|radius|ratio|remove|shear|size|slot|smalldisp|small|sphere|sratio|state|strainsoftening|sxx|syy|szz|tens|to|tol|ttab|unbal|unglued|var|vel|x|xdisp|xquiet|xvel|y|ydisp|yquiet|yvel|young|z|zone)\b\s</string>
 			<key>name</key>
-			<string>variable.parameter.type.f3dat</string>
+			<string>variable.parameter.type.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(case_of|caseof|Case_of|Caseof|case|Case|end_case|command|end_command|end|if|else|else if|end_if|endif|exit|loop|while|foreach|endloop|endLoop|end_loop|section|endsection|end_section|while_stepping|whilestepping)\b</string>
 			<key>name</key>
-			<string>keyword.language.f3dat</string>
+			<string>keyword.language.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\s*(\&amp;|\.\.\.)\s*$\n?</string>
 			<key>name</key>
-			<string>keyword.language.f3dat</string>
+			<string>keyword.language.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\s*(=|\*|\+|\^|\-|\/|\#|\,)\s*</string>
 			<key>name</key>
-			<string>keyword.operator.f3dat</string>
+			<string>keyword.operator.fdat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -100,7 +100,7 @@
 			<key>match</key>
 			<string>\b\s*(math|abs|acos|and|asin|atan|atan2|cos|degrad|dot|exp|grand|ln|log|mag|max|min|pi|round|sgn|sin|sqrt|tan|unit|urand|xcomp|ycomp|zcomp)\b</string>
 			<key>name</key>
-			<string>storage.type.function.f3dat</string>
+			<string>storage.type.function.fdat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -110,31 +110,31 @@
 			<key>match</key>
 			<string>\b\s*(array|del_table|float|get_array|get_mem|lose_array|lose_mem|int|not|notnull|null|or|string|table|union|vector)\b</string>
 			<key>name</key>
-			<string>storage.type.function.f3dat</string>
+			<string>storage.type.function.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>((;)(?!\{).*$\n?)</string>
 			<key>name</key>
-			<string>comment.language.f3dat</string>
+			<string>comment.language.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\s*(&lt;|=&lt;|&gt;|&gt;=|#)\s*</string>
 			<key>name</key>
-			<string>keyword.operator.comparison.f3dat</string>
+			<string>keyword.operator.comparison.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>((\'|\")[a-zA-Z,0-9,_,=,\s,\.,\,,\;,\:,\+,\-,\*,\%,\@,\/,\\,\(,\),\[,\],\{,\}]*(\'|\"))</string>
 			<key>name</key>
-			<string>string.language.f3dat</string>
+			<string>string.language.fdat</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>(\[|\])</string>
 			<key>name</key>
-			<string>storage.type.function.f3dat</string>
+			<string>storage.type.function.fdat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -146,12 +146,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.function.f3dat</string>
+					<string>storage.type.function.fdat</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.function.f3dat</string>
+					<string>variable.parameter.function.fdat</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -167,17 +167,17 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.language.f3dat</string>
+					<string>keyword.language.fdat</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.function.f3dat</string>
+					<string>storage.type.function.fdat</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.function.f3dat</string>
+					<string>variable.parameter.function.fdat</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -193,7 +193,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.f3dat</string>
+					<string>entity.name.function.fdat</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -205,7 +205,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.f3dat</string>
+					<string>entity.name.function.fdat</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -215,7 +215,7 @@
 			<key>match</key>
 			<string>\b(at_list|b_zone|clock|close|find_zone|i_elem_list|i_find|i_node_head|i_node_list|gp_head|gp_list|out|zone_head|z_list|block_head)\b\s*</string>
 			<key>name</key>
-			<string>entity.name.function.f3dat</string>
+			<string>entity.name.function.fdat</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -225,7 +225,7 @@
 			<key>match</key>
 			<string>\b(xgrav|ygrav|igp|izones|jgp|jzones)\b\s*</string>
 			<key>name</key>
-			<string>entity.name.function.f3dat</string>
+			<string>entity.name.function.fdat</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -233,7 +233,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.f3dat</string>
+					<string>entity.name.function.fdat</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -249,7 +249,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.f3dat</string>
+					<string>entity.name.function.fdat</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -265,7 +265,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.f3dat</string>
+					<string>entity.name.function.fdat</string>
 				</dict>
 			</dict>
 			<key>match</key>
@@ -273,7 +273,7 @@
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>source.f3dat</string>
+	<string>source.fdat</string>
 	<key>uuid</key>
 	<string>a4358a63-d396-4e0c-9b3d-f0de59021e43</string>
 </dict>
