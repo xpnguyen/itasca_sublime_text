@@ -1,0 +1,8 @@
+#To do list:
+
+Z-1. Travailler sur le highlight de la syntaxe d'une variable / fonction déclarée entre crochet
+	ex : [Variable_1] se colorie correctement mais [Variable_1 = 50] ne se colorient pas correctement.
+	[global Variable_1] ne se colorie pas correctement aussi.
+	les maps [map('key') = value] idem..
+
+Z-2. Voir le highlight des lignes de commandes fish si c'est à améliorer ou c'est suffisant.
